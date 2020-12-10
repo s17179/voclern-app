@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head('Voclern - Rejestracja')"></head>
+
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal text-primary">Rejestracja</h1>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+
+<div class="container">
+    <form th:action="@{/register}" th:object="${request}" method="post">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Adres email</label>
+            <input type="email" th:field="*{email}" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Podaj adres email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Hasło</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword2">Powtórz hasło</label>
+            <input type="password" name="repeatedPassword" class="form-control" id="exampleInputPassword2" placeholder="Powtórz hasło">
+        </div>
+        <button type="submit" class="btn btn-primary">Zarejestruj</button>
+    </form>
+</div>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head('Voclern - Dodaj nowe słówko')"></head>
+
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal text-primary">Dodaj nowe słówko</h1>
+        <p class="lead font-weight-normal">
+            Dodaj nowe słówko wraz z jego tłumaczeniem, żeby się go w końcu nauczyć!
+        </p>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Słówko</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Słówko">
+            <small class="form-text text-muted">Pamiętaj, że słówko jest w języku angielskim</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Tłumaczenie</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Tłumaczenie">
+            <small class="form-text text-muted">Pamiętaj, że tłumaczenie jest w języku ojczystym</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Grupy słówek, do których będzie należało słówko (opcjonalne)</label>
+            <select multiple class="form-control" id="exampleFormControlSelect1">
+                <option>Słownictwo związane ze zwierzętami</option>
+                <option>Słownictwo związane z motoryzacją</option>
+                <option>Słownictwo związane z IT</option>
+                <option>Angielski biznesowy</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Dodaj słówko</button>
+    </form>
+</div>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+
+</body>
+</html>
