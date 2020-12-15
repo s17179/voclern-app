@@ -20,7 +20,7 @@ public class HibernateUserRepository implements UserRepository {
 
     @Override
     public void add(User model) {
-        UserEntity userEntity = userMapper.toEntity(model);
+        UserEntity userEntity = userMapper.mapToUserEntity(model);
 
         userEntityRepository.save(userEntity);
     }
@@ -29,11 +29,11 @@ public class HibernateUserRepository implements UserRepository {
     public User get(UUID id) throws UserNotFoundException {
         UserEntity userEntity = userEntityRepository.findById(id).orElseThrow(UserNotFoundException::new);
 
-        return userMapper.toDto(userEntity);
+        return userMapper.mapToUser(userEntity);
     }
 
     @Override
     public User getByEmail(String email) throws UserNotFoundException {
-        return userMapper.toDto(userEntityRepository.findByEmail(email).orElseThrow(UserNotFoundException::new));
+        return userMapper.mapToUser(userEntityRepository.findByEmail(email).orElseThrow(UserNotFoundException::new));
     }
 }

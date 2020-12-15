@@ -19,24 +19,22 @@
 </div>
 
 <div class="container">
-    <form>
+    <form th:action="@{/add-word}" th:object="${request}" method="post">
         <div class="form-group">
-            <label for="exampleInputEmail1">Słówko</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Słówko">
+            <label for="wordValue">Słówko</label>
+            <input type="text" th:field="*{value}" class="form-control" id="wordValue" placeholder="Słówko">
             <small class="form-text text-muted">Pamiętaj, że słówko jest w języku angielskim</small>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Tłumaczenie</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Tłumaczenie">
+            <label for="wordTranslation">Tłumaczenie</label>
+            <input type="text" th:field="*{translation}" class="form-control" id="wordTranslation" placeholder="Tłumaczenie">
             <small class="form-text text-muted">Pamiętaj, że tłumaczenie jest w języku ojczystym</small>
         </div>
         <div class="form-group">
-            <label for="exampleFormControlSelect1">Grupy słówek, do których będzie należało słówko (opcjonalne)</label>
-            <select multiple class="form-control" id="exampleFormControlSelect1">
-                <option>Słownictwo związane ze zwierzętami</option>
-                <option>Słownictwo związane z motoryzacją</option>
-                <option>Słownictwo związane z IT</option>
-                <option>Angielski biznesowy</option>
+            <label for="wordGroups">Grupy słówek, do których będzie należało słówko (opcjonalne)</label>
+            <select th:field="*{wordGroupIds}" multiple class="form-control" id="wordGroups">
+                <option th:value="uuid1">Słownictwo związane ze zwierzętami</option>
+                <option th:value="uuid2">Słownictwo związane ze motoryzacją</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Dodaj słówko</button>

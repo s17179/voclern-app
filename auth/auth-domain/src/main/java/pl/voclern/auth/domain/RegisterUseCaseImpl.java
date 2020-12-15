@@ -1,8 +1,8 @@
 package pl.voclern.auth.domain;
 
 import lombok.RequiredArgsConstructor;
-import pl.voclern.auth.api.port.primary.RegisterUseCase;
-import pl.voclern.auth.api.port.primary.RegisterUseCaseContract;
+import pl.voclern.auth.api.register.RegisterUseCase;
+import pl.voclern.auth.api.register.RegisterUseCaseContract;
 import pl.voclern.auth.domain.port.secondary.UserRepository;
 
 import java.util.UUID;

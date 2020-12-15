@@ -2,7 +2,7 @@ package pl.voclern.auth.infrastructure;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pl.voclern.auth.api.port.primary.RegisterUseCase;
+import pl.voclern.auth.api.register.RegisterUseCase;
 import pl.voclern.auth.domain.RegisterUseCaseImpl;
 import pl.voclern.auth.domain.UserFactory;
 import pl.voclern.auth.domain.port.secondary.PasswordEncoder;

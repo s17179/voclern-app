@@ -1,4 +1,4 @@
-package pl.voclern.auth.api.port.primary;
+package pl.voclern.auth.api.register;
 
 import pl.voclern.shared.UseCase;
 

@@ -6,7 +6,7 @@ import pl.voclern.auth.domain.User;
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 
-    UserEntity toEntity(User user);
+    UserEntity mapToUserEntity(User user);
 
-    User toDto(UserEntity userEntity);
+    User mapToUser(UserEntity userEntity);
 }

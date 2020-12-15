@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>vocabulary-api</artifactId>
+    <artifactId>vocabulary-infrastructure</artifactId>
 
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
@@ -18,8 +18,20 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>pl.voclern</groupId>
-            <artifactId>shared</artifactId>
+            <artifactId>vocabulary-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>pl.voclern</groupId>
+            <artifactId>vocabulary-domain</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
