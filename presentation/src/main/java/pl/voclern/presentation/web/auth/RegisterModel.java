@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @FieldMatch(firstFieldName = "password", secondFieldName = "repeatedPassword", message = "Passwords do not match")
-public class RegisterRequest implements RegisterUseCaseContract {
+public class RegisterModel implements RegisterUseCaseContract {
 
     @NotNull
     private String email;

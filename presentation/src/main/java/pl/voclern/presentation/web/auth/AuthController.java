@@ -24,14 +24,14 @@ public class AuthController {
 
     @GetMapping("/register")
     public String register(Model model) {
-        model.addAttribute("request", new RegisterRequest());
+        model.addAttribute("model", new RegisterModel());
 
         return "register";
     }
 
     @PostMapping("/register")
-    public RedirectView registerSubmit(@Valid @ModelAttribute RegisterRequest request) {
-        registerUseCase.perform(request);
+    public RedirectView registerSubmit(@Valid @ModelAttribute RegisterModel model) {
+        registerUseCase.perform(model);
 
         return new RedirectView("/login");
     }

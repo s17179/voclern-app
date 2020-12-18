@@ -19,7 +19,7 @@
 </div>
 
 <div class="container">
-    <form th:action="@{/add-word}" th:object="${request}" method="post">
+    <form th:action="@{/add-word}" th:object="${model}" method="post">
         <div class="form-group">
             <label for="wordValue">Słówko</label>
             <input type="text" th:field="*{value}" class="form-control" id="wordValue" placeholder="Słówko">

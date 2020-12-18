@@ -1,34 +1,37 @@
 package pl.voclern.presentation.web.vocabulary;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.voclern.vocabulary.api.addword.AddWordUseCase;
+import org.springframework.web.servlet.view.RedirectView;
+import pl.voclern.presentation.vocabulary.client.VocabularyClient;
 
 import javax.validation.Valid;
+import java.util.UUID;
 
 @Controller
 @RequiredArgsConstructor
 //@Secured("ROLE_USER")
-public class WordController {
+class WordController {
 
-    private final AddWordUseCase addWordUseCase;
+    private final VocabularyClient vocabularyClient;
 
     @GetMapping("/new-word")
     public String newWord(Model model) {
-        model.addAttribute("request", new AddWordRequest());
+        model.addAttribute("model", new AddWordRequest());
 
         return "new-word";
     }
 
     @PostMapping("/add-word")
-    public String addWord(@Valid @ModelAttribute AddWordRequest request) {
-        addWordUseCase.perform(request);
+    public RedirectView addWord(@Valid @ModelAttribute AddWordRequest request) {
+        var model = new AddWordModel(UUID.randomUUID(), request.getValue(), request.getTranslation());
 
-        return "homepage";
+        vocabularyClient.addWord(model);
+
+        return new RedirectView("/");
     }
 }

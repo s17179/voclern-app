@@ -2,20 +2,14 @@ package pl.voclern.vocabulary.infrastructure;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pl.voclern.vocabulary.api.addword.AddWordUseCase;
-import pl.voclern.vocabulary.domain.AddWordUseCaseImpl;
-import pl.voclern.vocabulary.domain.WordFactory;
+import pl.voclern.vocabulary.domain.port.secondary.WordRepository;
 
 @Configuration
-public class VocabularyServiceProvider {
+class VocabularyServiceProvider {
 
     @Bean
-    public WordFactory wordFactory() {
-        return new WordFactory();
-    }
-
-    @Bean
-    public AddWordUseCase addWordUseCase(WordFactory wordFactory) {
-        return new AddWordUseCaseImpl(wordFactory);
+    public WordRepository wordRepository(HibernateWordEntityRepository hibernateWordEntityRepository,
+                                         WordEntityMapper wordEntityMapper) {
+        return new HibernateWordRepository(hibernateWordEntityRepository, wordEntityMapper);
     }
 }

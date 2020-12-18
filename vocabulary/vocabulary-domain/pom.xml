@@ -18,6 +18,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
@@ -26,7 +31,7 @@
 
         <dependency>
             <groupId>pl.voclern</groupId>
-            <artifactId>vocabulary-api</artifactId>
+            <artifactId>shared</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
