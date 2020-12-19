@@ -1,4 +1,4 @@
-package pl.voclern.vocabulary.infrastructure;
+package pl.voclern.vocabulary.adapter.second;
 
 import org.springframework.data.repository.CrudRepository;
 

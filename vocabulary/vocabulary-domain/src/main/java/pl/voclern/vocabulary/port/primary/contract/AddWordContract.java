@@ -1,4 +1,4 @@
-package pl.voclern.vocabulary.domain.port.primary.contract;
+package pl.voclern.vocabulary.port.primary.contract;
 
 import pl.voclern.shared.UseCaseContract;
 

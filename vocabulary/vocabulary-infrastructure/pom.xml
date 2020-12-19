@@ -48,13 +48,6 @@
 
         <dependency>
             <groupId>pl.voclern</groupId>
-            <artifactId>vocabulary-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>pl.voclern</groupId>
             <artifactId>vocabulary-domain</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>

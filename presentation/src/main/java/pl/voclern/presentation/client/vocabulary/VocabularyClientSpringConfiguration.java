@@ -1,8 +1,8 @@
-package pl.voclern.presentation.vocabulary.client;
+package pl.voclern.presentation.client.vocabulary;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pl.voclern.vocabulary.domain.port.primary.WordFacade;
+import pl.voclern.vocabulary.port.primary.WordFacade;
 
 @Configuration
 class VocabularyClientSpringConfiguration {

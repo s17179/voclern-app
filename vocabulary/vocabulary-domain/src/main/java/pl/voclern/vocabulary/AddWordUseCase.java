@@ -1,10 +1,10 @@
-package pl.voclern.vocabulary.domain;
+package pl.voclern.vocabulary;
 
 import lombok.RequiredArgsConstructor;
 import pl.voclern.shared.UseCase;
-import pl.voclern.vocabulary.domain.port.primary.contract.AddWordContract;
-import pl.voclern.vocabulary.domain.port.secondary.WordRepository;
-import pl.voclern.vocabulary.domain.port.secondary.dto.WordDto;
+import pl.voclern.vocabulary.port.primary.contract.AddWordContract;
+import pl.voclern.vocabulary.port.secondary.WordRepository;
+import pl.voclern.vocabulary.port.secondary.dto.WordDto;
 
 @RequiredArgsConstructor
 class AddWordUseCase implements UseCase<AddWordContract> {

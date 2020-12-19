@@ -65,7 +65,7 @@
         </dependency>
         <dependency>
             <groupId>pl.voclern</groupId>
-            <artifactId>vocabulary-api</artifactId>
+            <artifactId>vocabulary-domain</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

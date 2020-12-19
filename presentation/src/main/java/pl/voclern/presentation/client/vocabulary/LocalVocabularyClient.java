@@ -1,8 +1,8 @@
-package pl.voclern.presentation.vocabulary.client;
+package pl.voclern.presentation.client.vocabulary;
 
 import lombok.RequiredArgsConstructor;
-import pl.voclern.presentation.vocabulary.client.contract.AddWordContract;
-import pl.voclern.vocabulary.domain.port.primary.WordFacade;
+import pl.voclern.presentation.client.vocabulary.contract.AddWordContract;
+import pl.voclern.vocabulary.port.primary.WordFacade;
 
 @RequiredArgsConstructor
 class LocalVocabularyClient implements VocabularyClient {

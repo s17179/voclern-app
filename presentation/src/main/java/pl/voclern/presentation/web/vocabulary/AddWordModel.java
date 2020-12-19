@@ -2,7 +2,7 @@ package pl.voclern.presentation.web.vocabulary;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import pl.voclern.presentation.vocabulary.client.contract.AddWordContract;
+import pl.voclern.presentation.client.vocabulary.contract.AddWordContract;
 
 import java.util.UUID;
 

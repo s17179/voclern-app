@@ -1,11 +1,11 @@
-package pl.voclern.vocabulary.infrastructure;
+package pl.voclern.vocabulary.adapter.second;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pl.voclern.vocabulary.domain.port.secondary.WordRepository;
+import pl.voclern.vocabulary.port.secondary.WordRepository;
 
 @Configuration
-class VocabularyServiceProvider {
+class VocabularySecondAdapterConfig {
 
     @Bean
     public WordRepository wordRepository(HibernateWordEntityRepository hibernateWordEntityRepository,

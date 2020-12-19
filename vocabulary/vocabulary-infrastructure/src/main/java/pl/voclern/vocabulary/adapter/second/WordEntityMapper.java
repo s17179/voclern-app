@@ -1,7 +1,7 @@
-package pl.voclern.vocabulary.infrastructure;
+package pl.voclern.vocabulary.adapter.second;
 
 import org.mapstruct.Mapper;
-import pl.voclern.vocabulary.domain.port.secondary.dto.WordDto;
+import pl.voclern.vocabulary.port.secondary.dto.WordDto;
 
 @Mapper(componentModel = "spring")
 interface WordEntityMapper {

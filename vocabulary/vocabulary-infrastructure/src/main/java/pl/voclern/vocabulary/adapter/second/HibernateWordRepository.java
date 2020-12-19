@@ -1,8 +1,8 @@
-package pl.voclern.vocabulary.infrastructure;
+package pl.voclern.vocabulary.adapter.second;
 
 import lombok.RequiredArgsConstructor;
-import pl.voclern.vocabulary.domain.port.secondary.WordRepository;
-import pl.voclern.vocabulary.domain.port.secondary.dto.WordDto;
+import pl.voclern.vocabulary.port.secondary.WordRepository;
+import pl.voclern.vocabulary.port.secondary.dto.WordDto;
 
 @RequiredArgsConstructor
 class HibernateWordRepository implements WordRepository {

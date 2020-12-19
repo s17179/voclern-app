@@ -1,10 +1,11 @@
-package pl.voclern.vocabulary.domain;
+package pl.voclern.vocabulary;
 
 import lombok.RequiredArgsConstructor;
-import pl.voclern.vocabulary.domain.port.primary.contract.AddWordContract;
+import pl.voclern.vocabulary.port.primary.contract.AddWordContract;
+import pl.voclern.vocabulary.port.primary.WordFacade;
 
 @RequiredArgsConstructor
-class WordFacadeImpl implements pl.voclern.vocabulary.domain.port.primary.WordFacade {
+class WordFacadeImpl implements WordFacade {
 
     private final AddWordUseCase addWordUseCase;
 

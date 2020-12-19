@@ -1,4 +1,4 @@
-package pl.voclern.vocabulary.domain.port.secondary.dto;
+package pl.voclern.vocabulary.port.secondary.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
