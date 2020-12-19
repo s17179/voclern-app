@@ -37,8 +37,11 @@
                 >
                     <a class="nav-link" th:href="@{/new-word-group}">Dodaj nową grupę słówek</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/}">Kontakt</a>
+                <li
+                        th:classappend="${#httpServletRequest.getRequestURI() == '/contact' ? 'active' : ''}"
+                        class="nav-item"
+                >
+                    <a class="nav-link" th:href="@{/contact}">Kontakt</a>
                 </li>
                 <li
                         th:classappend="${#httpServletRequest.getRequestURI() == '/login' ? 'active' : ''}"

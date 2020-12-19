@@ -10,4 +10,9 @@ class HomePageController {
     public String homepage() {
         return "homepage";
     }
+
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact";
+    }
 }
