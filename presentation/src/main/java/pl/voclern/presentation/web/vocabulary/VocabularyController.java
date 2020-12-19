@@ -14,7 +14,7 @@ import java.util.UUID;
 @Controller
 @RequiredArgsConstructor
 //@Secured("ROLE_USER")
-class WordController {
+class VocabularyController {
 
     private final VocabularyClient vocabularyClient;
 
@@ -26,10 +26,26 @@ class WordController {
     }
 
     @PostMapping("/add-word")
-    public RedirectView addWord(@Valid AddWordFrom request) {
-        var model = new AddWordModel(UUID.randomUUID(), request.getValue(), request.getTranslation());
+    public RedirectView addWord(@Valid AddWordFrom form) {
+        var model = new AddWordModel(UUID.randomUUID(), form.getValue(), form.getTranslation());
 
         vocabularyClient.addWord(model);
+
+        return new RedirectView("/");
+    }
+
+    @GetMapping("/new-word-group")
+    public String newWordGroup(Model model) {
+        model.addAttribute("model", new AddWordGroupForm());
+
+        return "new-word-group";
+    }
+
+    @PostMapping("/add-word-group")
+    public RedirectView addWordGroup(@Valid AddWordGroupForm form) {
+        var model = new AddWordGroupModel(UUID.randomUUID(), form.getName());
+
+        vocabularyClient.addWordGroup(model);
 
         return new RedirectView("/");
     }

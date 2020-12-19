@@ -22,12 +22,12 @@
     <form th:action="@{/add-word}" th:object="${model}" method="post">
         <div class="form-group">
             <label for="wordValue">Słówko</label>
-            <input type="text" th:field="*{value}" class="form-control" id="wordValue" placeholder="Słówko">
+            <input type="text" th:field="*{value}" class="form-control" id="wordValue" placeholder="Słówko" required>
             <small class="form-text text-muted">Pamiętaj, że słówko jest w języku angielskim</small>
         </div>
         <div class="form-group">
             <label for="wordTranslation">Tłumaczenie</label>
-            <input type="text" th:field="*{translation}" class="form-control" id="wordTranslation" placeholder="Tłumaczenie">
+            <input type="text" th:field="*{translation}" class="form-control" id="wordTranslation" placeholder="Tłumaczenie" required>
             <small class="form-text text-muted">Pamiętaj, że tłumaczenie jest w języku ojczystym</small>
         </div>
         <div class="form-group">

@@ -30,6 +30,13 @@
                 >
                     <a class="nav-link" th:href="@{/new-word}">Dodaj nowe słówko</a>
                 </li>
+                <li
+                        th:classappend="${#httpServletRequest.getRequestURI() == '/new-word-group' ? 'active' : ''}"
+                        class="nav-item"
+                        sec:authorize="isAnonymous()"
+                >
+                    <a class="nav-link" th:href="@{/new-word-group}">Dodaj nową grupę słówek</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/}">Kontakt</a>
                 </li>
