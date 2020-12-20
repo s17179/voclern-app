@@ -2,13 +2,15 @@ package pl.voclern.vocabulary.port.primary.contract;
 
 import pl.voclern.shared.UseCaseContract;
 
-import java.util.UUID;
+import java.util.List;
 
 public interface AddWordContract extends UseCaseContract {
 
-    UUID getId();
+    String getId();
 
     String getWordValue();
 
     String getWordTranslation();
+
+    List<String> getWordGroupIds();
 }

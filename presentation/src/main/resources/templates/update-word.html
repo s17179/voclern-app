@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pl" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="fragments/head :: head('Voclern - Dodaj nowe słówko')"></head>
+<head th:replace="fragments/head :: head('Voclern - Popraw słówko')"></head>
 
 <body>
 
@@ -9,9 +9,9 @@
 
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 font-weight-normal text-primary">Dodaj nowe słówko</h1>
+        <h1 class="display-4 font-weight-normal text-primary">Popraw słówko</h1>
         <p class="lead font-weight-normal">
-            Dodaj nowe słówko wraz z jego tłumaczeniem, żeby się go w końcu nauczyć!
+            Popraw dodane przez siebie słówko jeżeli zawiera jakieś błędy
         </p>
     </div>
     <div class="product-device shadow-sm d-none d-md-block"></div>
@@ -19,24 +19,24 @@
 </div>
 
 <div class="container">
-    <form th:action="@{/add-word}" th:object="${model}" method="post">
+    <form th:action="@{'/word/update/' + ${word.id}}" th:object="${word}" method="post">
         <div class="form-group">
             <label for="wordValue">Słówko</label>
-            <input type="text" th:field="*{value}" class="form-control" id="wordValue" placeholder="Słówko" required>
+            <input type="text" th:field="*{value}" th:value="${word.value}" class="form-control" id="wordValue" placeholder="Słówko" required>
             <small class="form-text text-muted">Pamiętaj, że słówko jest w języku angielskim</small>
         </div>
         <div class="form-group">
             <label for="wordTranslation">Tłumaczenie</label>
-            <input type="text" th:field="*{translation}" class="form-control" id="wordTranslation" placeholder="Tłumaczenie" required>
+            <input type="text" th:field="*{translation}" th:value="${word.translation}" class="form-control" id="wordTranslation" placeholder="Tłumaczenie" required>
             <small class="form-text text-muted">Pamiętaj, że tłumaczenie jest w języku ojczystym</small>
         </div>
         <div class="form-group">
             <label for="wordGroups">Grupy słówek, do których będzie należało słówko (opcjonalne)</label>
-            <select th:field="*{wordGroupIds}" multiple class="form-control" id="wordGroups">
-                <option th:each="wordGroup : ${wordGroups}" th:value="${wordGroup.id}" th:text="${wordGroup.name}"></option>
+            <select multiple class="form-control" id="wordGroups">
+                <option></option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Dodaj słówko</button>
+        <button type="submit" class="btn btn-primary">Popraw słówko</button>
     </form>
 </div>
 

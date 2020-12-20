@@ -10,8 +10,8 @@ import pl.voclern.vocabulary.port.secondary.WordRepository;
 class VocabularyConfig {
 
     @Bean
-    public AddWordUseCase addWordUseCase(WordRepository wordRepository) {
-        return new AddWordUseCase(wordRepository);
+    public AddWordUseCase addWordUseCase(WordRepository wordRepository, WordGroupRepository wordGroupRepository) {
+        return new AddWordUseCase(wordRepository, wordGroupRepository);
     }
 
     @Bean
@@ -20,7 +20,39 @@ class VocabularyConfig {
     }
 
     @Bean
-    public VocabularyFacade wordFacade(AddWordUseCase addWordUseCase, AddWordGroupUseCase addWordGroupUseCase) {
-        return new VocabularyFacadeImpl(addWordUseCase, addWordGroupUseCase);
+    public ListWordGroupsUseCase listWordGroupsUseCase(WordGroupRepository wordGroupRepository) {
+        return new ListWordGroupsUseCase(wordGroupRepository);
+    }
+
+    @Bean
+    public ListWordsUseCase listWordsUseCase(WordRepository wordRepository) {
+        return new ListWordsUseCase(wordRepository);
+    }
+
+    @Bean
+    public RemoveWordUseCase removeWordUseCase(WordRepository wordRepository) {
+        return new RemoveWordUseCase(wordRepository);
+    }
+
+    @Bean
+    public LoadWordUseCase loadWordUseCase(WordRepository wordRepository) {
+        return new LoadWordUseCase(wordRepository);
+    }
+
+    @Bean
+    public VocabularyFacade wordFacade(AddWordUseCase addWordUseCase,
+                                       AddWordGroupUseCase addWordGroupUseCase,
+                                       ListWordGroupsUseCase listWordGroupsUseCase,
+                                       ListWordsUseCase listWordsUseCase,
+                                       RemoveWordUseCase removeWordUseCase,
+                                       LoadWordUseCase loadWordUseCase) {
+        return new VocabularyFacadeImpl(
+                addWordUseCase,
+                addWordGroupUseCase,
+                listWordGroupsUseCase,
+                listWordsUseCase,
+                removeWordUseCase,
+                loadWordUseCase
+        );
     }
 }

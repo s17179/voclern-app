@@ -17,26 +17,30 @@
                 <li th:classappend="${#httpServletRequest.getRequestURI() == '/' ? 'active' : ''}" class="nav-item">
                     <a class="nav-link" th:href="@{/}">Strona główna</a>
                 </li>
-                <li class="nav-item" sec:authorize="isAuthenticated()">
-                    <a class="nav-link" th:href="@{/}">Lista słówek</a>
-                </li>
-                <li class="nav-item" sec:authorize="isAuthenticated()">
-                    <a class="nav-link" th:href="@{/}">Lista grup słówek</a>
-                </li>
                 <li
-                        th:classappend="${#httpServletRequest.getRequestURI() == '/new-word' ? 'active' : ''}"
-                        class="nav-item"
-                        sec:authorize="isAuthenticated()"
-                >
-                    <a class="nav-link" th:href="@{/new-word}">Dodaj nowe słówko</a>
-                </li>
-                <li
-                        th:classappend="${#httpServletRequest.getRequestURI() == '/new-word-group' ? 'active' : ''}"
+                        th:classappend="${#httpServletRequest.getRequestURI() == '/word-list' ? 'active' : ''}"
                         class="nav-item"
                         sec:authorize="isAnonymous()"
                 >
-                    <a class="nav-link" th:href="@{/new-word-group}">Dodaj nową grupę słówek</a>
+                    <a class="nav-link" th:href="@{/word-list}">Lista słówek</a>
                 </li>
+<!--                <li class="nav-item" sec:authorize="isAnonymous()">-->
+<!--                    <a class="nav-link" th:href="@{/}">Lista grup słówek</a>-->
+<!--                </li>-->
+                <li
+                        th:classappend="${#httpServletRequest.getRequestURI() == '/new-word' ? 'active' : ''}"
+                        class="nav-item"
+                        sec:authorize="isAnonymous()"
+                >
+                    <a class="nav-link" th:href="@{/new-word}">Dodaj nowe słówko</a>
+                </li>
+<!--                <li-->
+<!--                        th:classappend="${#httpServletRequest.getRequestURI() == '/new-word-group' ? 'active' : ''}"-->
+<!--                        class="nav-item"-->
+<!--                        sec:authorize="isAnonymous()"-->
+<!--                >-->
+<!--                    <a class="nav-link" th:href="@{/new-word-group}">Dodaj nową grupę słówek</a>-->
+<!--                </li>-->
                 <li
                         th:classappend="${#httpServletRequest.getRequestURI() == '/contact' ? 'active' : ''}"
                         class="nav-item"
