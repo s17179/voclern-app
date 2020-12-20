@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/head :: head('Voclern - Lista grup słówek')"></head>
+
+<body>
+
+<header th:replace="fragments/header :: header"></header>
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal text-primary">Lista grup słówek</h1>
+        <p class="lead font-weight-normal">
+            Możliwość przeglądania i powtarzania pogrupowanego słownictwa
+        </p>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Słownictwo związane ze zwierzętami</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Słownictwo związane z motoryzacją</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Słownictwo związane z IT</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Angielski biznesowy</a>
+                <a class="list-group-item list-group-item-action" id="others" data-toggle="list" href="#list-other" role="tab" aria-controls="others">Słówka bez grup</a>
+            </div>
+        </div>
+        <div class="col-7">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Dog</li>
+                        <li class="list-group-item">Cat</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Brak słówek</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Brak słówek</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Brak słówek</li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="list-other" role="tabpanel" aria-labelledby="others">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cutlery</li>
+                        <li class="list-group-item">Undertaker</li>
+                        <li class="list-group-item">Keyboard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="fragments/footer :: footer"></footer>
+
+<th:block th:replace="fragments/script :: script"></th:block>
+
+</body>
+</html>

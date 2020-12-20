@@ -30,12 +30,6 @@
             <input type="text" th:field="*{translation}" th:value="${word.translation}" class="form-control" id="wordTranslation" placeholder="Tłumaczenie" required>
             <small class="form-text text-muted">Pamiętaj, że tłumaczenie jest w języku ojczystym</small>
         </div>
-        <div class="form-group">
-            <label for="wordGroups">Grupy słówek, do których będzie należało słówko (opcjonalne)</label>
-            <select multiple class="form-control" id="wordGroups">
-                <option></option>
-            </select>
-        </div>
         <button type="submit" class="btn btn-primary">Popraw słówko</button>
     </form>
 </div>

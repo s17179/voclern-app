@@ -19,24 +19,24 @@
 </div>
 
 <div class="container">
-    <form>
+    <form class="needs-validation" novalidate>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Imię</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="Imię">
+                <input type="text" class="form-control" id="inputEmail4" placeholder="Imię" required>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPassword4">Nazwisko</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Nazwisko">
+                <input type="text" class="form-control" id="inputPassword4" placeholder="Nazwisko" required>
             </div>
         </div>
         <div class="form-group">
             <label for="inputAddress">Adres e-mail</label>
-            <input type="email" class="form-control" id="inputAddress" placeholder="Adres e-mail">
+            <input type="email" class="form-control" id="inputAddress" placeholder="Adres e-mail" required>
         </div>
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Treść wiadomości</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Wyślij wiadomość</button>
     </form>

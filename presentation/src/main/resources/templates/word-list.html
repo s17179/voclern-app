@@ -26,7 +26,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Słówko</th>
                 <th scope="col">Tłumaczenie</th>
-                <th scope="col">Data dodania</th>
                 <th scope="col">Akcje</th>
             </tr>
             </thead>
@@ -35,7 +34,6 @@
                 <th scope="row" th:text="${iStat.index + 1}"></th>
                 <td th:text="${word.value}"></td>
                 <td th:text="${word.translation}"></td>
-                <td>2020-12-20</td>
                 <td><a th:href="@{'/word/update/' + ${word.id}}" class="btn btn-outline-primary">Edytuj</a></td>
                 <td><a th:href="@{'/word/remove/' + ${word.id}}" class="btn btn-outline-danger">Usuń</a></td>
             </tr>

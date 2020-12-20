@@ -7,10 +7,14 @@
                 <h5>Menu</h5>
                 <ul class="list-unstyled text-small">
                     <li><a class="text-muted" th:href="@{/}">Strona Główna</a></li>
-                    <li><a class="text-muted" th:href="@{/}" sec:authorize="isAuthenticated()">Lista słówek</a></li>
-                    <li><a class="text-muted" th:href="@{/}" sec:authorize="isAuthenticated()">Lista grup słówek</a></li>
-                    <li><a class="text-muted" th:href="@{/}" sec:authorize="isAuthenticated()">Dodaj nowe słówko</a></li>
-                    <li><a class="text-muted" th:href="@{/}">Kontakt</a></li>
+                    <li><a class="text-muted" th:href="@{/word-list}" sec:authorize="isAuthenticated()">Lista słówek</a></li>
+                    <li><a class="text-muted" th:href="@{/word-group-list}" sec:authorize="isAuthenticated()">Lista grup słówek</a></li>
+                    <li><a class="text-muted" th:href="@{/new-word}" sec:authorize="isAuthenticated()">Dodaj nowe słówko</a></li>
+                    <li><a class="text-muted" th:href="@{/new-word-group}" sec:authorize="isAuthenticated()">Dodaj nową grupę słówek</a></li>
+                    <li><a class="text-muted" th:href="@{/contact}">Kontakt</a></li>
+                    <li><a class="text-muted" th:href="@{/login}" sec:authorize="isAnonymous()">Logowanie</a></li>
+                    <li><a class="text-muted" th:href="@{/register}" sec:authorize="isAnonymous()">Rejestracja</a></li>
+                    <li><a class="text-muted" th:href="@{/logout}" sec:authorize="isAuthenticated()">Wyloguj</a></li>
                 </ul>
             </div>
             <div class="col-4">

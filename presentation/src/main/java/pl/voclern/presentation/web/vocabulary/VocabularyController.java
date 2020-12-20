@@ -1,6 +1,7 @@
 package pl.voclern.presentation.web.vocabulary;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ import java.util.UUID;
 
 @Controller
 @RequiredArgsConstructor
-//@Secured("ROLE_USER")
+@Secured("ROLE_USER")
 class VocabularyController {
 
     private final VocabularyClient vocabularyClient;
@@ -40,7 +41,7 @@ class VocabularyController {
 
         vocabularyClient.addWord(model);
 
-        return new RedirectView("/");
+        return new RedirectView("/word-list");
     }
 
     @GetMapping("/new-word-group")
@@ -56,7 +57,7 @@ class VocabularyController {
 
         vocabularyClient.addWordGroup(model);
 
-        return new RedirectView("/");
+        return new RedirectView("/word-group-list");
     }
 
     @GetMapping("/word-list")
@@ -72,7 +73,7 @@ class VocabularyController {
     public RedirectView removeWord(@PathVariable("id") String id) {
         vocabularyClient.removeWord(id);
 
-        return new RedirectView("/");
+        return new RedirectView("/word-list");
     }
 
     @GetMapping("/word/update/{id}")
@@ -90,6 +91,11 @@ class VocabularyController {
 
         vocabularyClient.addWord(model);
 
-        return new RedirectView("/");
+        return new RedirectView("/word-list");
+    }
+
+    @GetMapping("word-group-list")
+    public String wordGroupList() {
+        return "word-group-list";
     }
 }

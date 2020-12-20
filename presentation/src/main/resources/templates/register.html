@@ -16,18 +16,18 @@
 </div>
 
 <div class="container">
-    <form th:action="@{/register}" th:object="${model}" method="post">
+    <form th:action="@{/register}" th:object="${model}" method="post" class="needs-validation" novalidate>
         <div class="form-group">
             <label for="exampleInputEmail1">Adres email</label>
-            <input type="email" th:field="*{email}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Podaj adres email">
+            <input type="email" th:field="*{email}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Podaj adres email" required>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Hasło</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło">
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Hasło" required>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword2">Powtórz hasło</label>
-            <input type="password" name="repeatedPassword" class="form-control" id="exampleInputPassword2" placeholder="Powtórz hasło">
+            <input type="password" name="repeatedPassword" class="form-control" id="exampleInputPassword2" placeholder="Powtórz hasło" required>
         </div>
         <button type="submit" class="btn btn-primary">Zarejestruj</button>
     </form>
@@ -36,6 +36,22 @@
 <footer th:replace="fragments/footer :: footer"></footer>
 
 <th:block th:replace="fragments/script :: script"></th:block>
+
+<script>
+    (() => {
+        'use strict';
+
+        $('input[name=repeatedPassword]').keyup(function () {
+            'use strict';
+
+            if ($('input[name=password]').val() === $(this).val()) {
+                this.setCustomValidity('');
+            } else {
+                this.setCustomValidity('Passwords must match');
+            }
+        });
+    })();
+</script>
 
 </body>
 </html>
