@@ -4,10 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
-import pl.voclern.auth.api.register.RegisterUseCase;
+import pl.voclern.presentation.client.auth.AuthClient;
 
 import javax.validation.Valid;
 
@@ -15,7 +14,7 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class AuthController {
 
-    private final RegisterUseCase registerUseCase;
+    private final AuthClient authClient;
 
     @GetMapping("/login")
     public String login() {
@@ -30,8 +29,8 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public RedirectView registerSubmit(@Valid @ModelAttribute RegisterModel model) {
-        registerUseCase.perform(model);
+    public RedirectView registerSubmit(@Valid RegisterModel model) {
+        authClient.register(model);
 
         return new RedirectView("/login");
     }

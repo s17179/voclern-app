@@ -53,13 +53,6 @@
 
         <dependency>
             <groupId>pl.voclern</groupId>
-            <artifactId>auth-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>pl.voclern</groupId>
             <artifactId>auth-infrastructure</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
