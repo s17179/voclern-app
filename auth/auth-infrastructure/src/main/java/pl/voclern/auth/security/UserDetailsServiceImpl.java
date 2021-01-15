@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+import pl.voclern.auth.adapter.secondary.HibernateUserEntityRepository;
 import pl.voclern.auth.port.secondary.exception.UserNotFoundException;
 import pl.voclern.auth.port.secondary.UserRepository;
 
@@ -18,12 +19,12 @@ import java.util.List;
 @RequiredArgsConstructor
 class UserDetailsServiceImpl implements UserDetailsService {
 
-    private final UserRepository userRepository;
+    private final HibernateUserEntityRepository userRepository;
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         try {
-            var user = userRepository.getByEmail(s);
+            var user = userRepository.findByToken(s).orElseThrow(UserNotFoundException::new);
 
             List<GrantedAuthority> roles = new ArrayList<>();
             roles.add(new SimpleGrantedAuthority("ROLE_USER"));

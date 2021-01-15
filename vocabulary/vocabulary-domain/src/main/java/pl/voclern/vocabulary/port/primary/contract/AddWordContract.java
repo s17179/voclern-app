@@ -11,6 +11,4 @@ public interface AddWordContract extends UseCaseContract {
     String getWordValue();
 
     String getWordTranslation();
-
-    List<String> getWordGroupIds();
 }
