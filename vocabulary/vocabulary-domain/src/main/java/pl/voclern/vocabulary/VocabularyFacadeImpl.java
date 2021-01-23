@@ -9,7 +9,9 @@ import pl.voclern.vocabulary.port.primary.contract.ListWordsQueryContract;
 import pl.voclern.vocabulary.port.secondary.dto.WordDto;
 import pl.voclern.vocabulary.port.secondary.dto.WordGroupDto;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @RequiredArgsConstructor
 class VocabularyFacadeImpl implements VocabularyFacade {

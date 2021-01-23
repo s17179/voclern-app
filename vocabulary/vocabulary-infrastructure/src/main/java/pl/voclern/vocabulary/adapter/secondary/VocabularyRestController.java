@@ -27,6 +27,7 @@ class VocabularyRestController {
     }
 
     @GetMapping("/api/word-list")
+    @ResponseStatus(value = HttpStatus.OK)
     public List<WordDto> wordList() {
         return vocabularyFacade.listWords(() -> UUID.randomUUID().toString());
     }
@@ -40,5 +41,10 @@ class VocabularyRestController {
     @DeleteMapping("/api/word/remove/{id}")
     public void removeWord(@PathVariable("id") String id) {
         vocabularyFacade.removeWord(id);
+    }
+
+    @GetMapping("/api/word/{id}")
+    public WordDto getWord(@PathVariable("id") String id) {
+        return vocabularyFacade.get(id);
     }
 }
